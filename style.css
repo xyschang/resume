@@ -2,24 +2,25 @@ body {
     margin: 0;
     font-family: Arial, 'Noto Sans TC', sans-serif;
     background-color: #f4f4f4;
-    line-height: 1.85;
+    line-height: 1.8;
 }
 
 .container {
     display: flex;
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 30px auto;
     background: white;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.12);
     overflow: hidden;
+    min-height: 100vh;
 }
 
 /* 左欄 */
 .left {
-    width: 36%;
+    width: 38%;
     background: #2c2c2c;
     color: white;
-    padding: 40px 30px;
+    padding: 40px 32px;
 }
 
 /* 大頭貼 */
@@ -29,58 +30,53 @@ body {
 }
 
 .profile-photo img {
-    width: 155px;
-    height: 155px;
+    width: 165px;
+    height: 165px;
     border-radius: 50%;
     object-fit: cover;
     border: 6px solid #ffffff;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 }
 
 /* 右欄 */
 .right {
-    width: 64%;
-    padding: 40px 35px;
+    width: 62%;
+    padding: 45px 40px;
 }
 
-/* ==================== 手機版強力優化 ==================== */
+/* ==================== 手機版優化 ==================== */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
         margin: 0;
         box-shadow: none;
         width: 100%;
+        min-height: auto;
     }
     
     .left, .right {
         width: 100%;
-        padding: 32px 26px;     /* 明顯加大左右空間 */
+        padding: 35px 26px;     /* 加大空間 */
     }
     
     .profile-photo img {
-        width: 135px;
-        height: 135px;
+        width: 140px;
+        height: 140px;
     }
     
-    h1 { font-size: 2.1em; }
-    h2 { font-size: 1.38em; margin-bottom: 20px; }
-    h3 { font-size: 1.1em; }
+    h1 { font-size: 2.15em; }
+    h2 { font-size: 1.45em; margin-bottom: 20px; }
     
     p, li {
-        font-size: 1.02em;      /* 加大字體 */
-        margin-bottom: 14px;    /* 加大行距 */
+        font-size: 1.03em;
+        margin-bottom: 14px;
     }
     
-    ul {
-        padding-left: 26px;
-    }
-    
-    .section {
-        margin-bottom: 38px;
-    }
+    ul { padding-left: 26px; }
 }
 
 /* 通用樣式 */
+h1 { margin: 0 0 12px 0; }
 h2 {
     border-bottom: 3px solid #1e3a8a;
     padding-bottom: 10px;
@@ -91,3 +87,6 @@ h2 {
     color: white;
     border-bottom: 2px solid #555;
 }
+
+ul { margin: 12px 0; }
+li { margin-bottom: 11px; }
