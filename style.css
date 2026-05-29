@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: Arial, 'Noto Sans TC', sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.left {
+    width: 35%;
+    background: #2c2c2c;
+    color: white;
+    padding: 35px 30px;
+}
+
+.right {
+    width: 65%;
+    padding: 35px 30px;
+}
+
+h1 {
+    margin: 0 0 8px 0;
+    font-size: 2.1em;
+}
+
+h3 {
+    margin: 0 0 25px 0;
+    font-weight: normal;
+    font-size: 1.05em;
+    opacity: 0.95;
+}
+
+h2 {
+    border-bottom: 3px solid #1e3a8a;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+    color: #1e3a8a;
+    font-size: 1.35em;
+}
+
+.section {
+    margin-bottom: 32px;
+}
+
+.left .section {
+    margin-bottom: 28px;
+}
+
+ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* 讓左欄標題顏色更突出 */
+.left h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #555;
+}
