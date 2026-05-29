@@ -11,6 +11,7 @@ body {
     margin: 20px auto;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
 /* 左欄 */
@@ -19,6 +20,21 @@ body {
     background: #2c2c2c;
     color: white;
     padding: 30px 25px;
+}
+
+/* 大頭貼 */
+.profile-photo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
 /* 右欄 */
@@ -33,36 +49,30 @@ body {
         flex-direction: column;
         margin: 0;
         box-shadow: none;
+        width: 100%;
     }
     
     .left, .right {
         width: 100%;
-        padding: 25px 18px;
+        padding: 25px 20px;
     }
     
-    h1 { font-size: 1.9em; }
-    h2 { font-size: 1.3em; }
-    h3 { font-size: 1.1em; }
+    h1 { font-size: 1.95em; }
+    h2 { font-size: 1.35em; }
     
     p, li {
         font-size: 0.97em;
-        margin-bottom: 11px;
+        margin-bottom: 10px;
     }
     
-    ul {
-        padding-left: 20px;
-    }
-    
-    .section {
-        margin-bottom: 30px;
-    }
+    ul { padding-left: 20px; }
 }
 
-/* 其他樣式 */
+/* 通用樣式 */
 h2 {
     border-bottom: 3px solid #1e3a8a;
     padding-bottom: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     color: #1e3a8a;
 }
 
