@@ -14,6 +14,7 @@ body {
     overflow: hidden;
 }
 
+/* 左欄 */
 .left {
     width: 35%;
     background: #2c2c2c;
@@ -21,11 +22,41 @@ body {
     padding: 35px 30px;
 }
 
+/* 右欄 */
 .right {
     width: 65%;
     padding: 35px 30px;
 }
 
+/* ==================== 手機響應式 ==================== */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;   /* 改成上下排列 */
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    .left {
+        width: 100%;
+        padding: 25px 20px;
+    }
+    
+    .right {
+        width: 100%;
+        padding: 25px 20px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .section {
+        margin-bottom: 25px;
+    }
+}
+
+/* 其他樣式保持不變 */
 h1 {
     margin: 0 0 8px 0;
     font-size: 2.1em;
@@ -63,7 +94,6 @@ li {
     margin-bottom: 8px;
 }
 
-/* 讓左欄標題顏色更突出 */
 .left h2 {
     color: #ffffff;
     border-bottom: 2px solid #555;
