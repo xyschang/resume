@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Arial, 'Noto Sans TC', sans-serif;
     background-color: #f4f4f4;
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 .container {
@@ -22,28 +22,13 @@ body {
     padding: 30px 25px;
 }
 
-/* 大頭貼 */
-.profile-photo {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.profile-photo img {
-    width: 145px;
-    height: 145px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #ffffff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-}
-
 /* 右欄 */
 .right {
     width: 65%;
     padding: 30px 25px;
 }
 
-/* ==================== 手機版優化 ==================== */
+/* ==================== 手機版大幅優化 ==================== */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -54,25 +39,31 @@ body {
     
     .left, .right {
         width: 100%;
-        padding: 25px 20px;
+        padding: 28px 22px;        /* 增加內距 */
     }
     
-    h1 { font-size: 1.95em; }
-    h2 { font-size: 1.35em; }
+    h1 { font-size: 2.0em; }
+    h2 { font-size: 1.4em; margin-bottom: 16px; }
+    h3 { font-size: 1.1em; }
     
     p, li {
-        font-size: 0.97em;
-        margin-bottom: 10px;
+        font-size: 0.99em;         /* 稍微加大字體 */
+        margin-bottom: 12px;       /* 增加行距 */
     }
     
-    ul { padding-left: 20px; }
+    ul {
+        padding-left: 22px;
+    }
+    
+    .section {
+        margin-bottom: 32px;
+    }
 }
 
 /* 通用樣式 */
 h2 {
     border-bottom: 3px solid #1e3a8a;
     padding-bottom: 8px;
-    margin-bottom: 18px;
     color: #1e3a8a;
 }
 
