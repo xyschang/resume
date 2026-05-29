@@ -2,16 +2,15 @@ body {
     margin: 0;
     font-family: Arial, 'Noto Sans TC', sans-serif;
     background-color: #f4f4f4;
-    line-height: 1.65;
+    line-height: 1.7;
 }
 
 .container {
     display: flex;
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 20px auto;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    overflow: hidden;
 }
 
 /* 左欄 */
@@ -19,70 +18,55 @@ body {
     width: 35%;
     background: #2c2c2c;
     color: white;
-    padding: 35px 30px;
+    padding: 30px 25px;
 }
 
 /* 右欄 */
 .right {
     width: 65%;
-    padding: 35px 30px;
+    padding: 30px 25px;
 }
 
 /* ==================== 手機版優化 ==================== */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        max-width: 100%;
         margin: 0;
         box-shadow: none;
     }
     
     .left, .right {
         width: 100%;
-        padding: 25px 20px;     /* 增加左右內距 */
+        padding: 25px 18px;
     }
     
-    h1 {
-        font-size: 1.85em;
+    h1 { font-size: 1.9em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.1em; }
+    
+    p, li {
+        font-size: 0.97em;
+        margin-bottom: 11px;
     }
     
-    h2 {
-        font-size: 1.25em;
-    }
-    
-    h3 {
-        font-size: 1.05em;
-    }
-    
-    li {
-        font-size: 0.95em;
-        margin-bottom: 10px;
-    }
-    
-    p {
-        font-size: 0.96em;
+    ul {
+        padding-left: 20px;
     }
     
     .section {
-        margin-bottom: 28px;
+        margin-bottom: 30px;
     }
 }
 
-/* 其他通用樣式 */
-h1 { margin: 0 0 8px 0; font-size: 2.1em; }
-h3 { margin: 0 0 25px 0; font-weight: normal; opacity: 0.95; }
-
+/* 其他樣式 */
 h2 {
     border-bottom: 3px solid #1e3a8a;
     padding-bottom: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     color: #1e3a8a;
 }
 
-ul { padding-left: 22px; margin: 10px 0; }
-li { margin-bottom: 9px; }
-
 .left h2 {
-    color: #ffffff;
+    color: white;
     border-bottom: 2px solid #555;
 }
