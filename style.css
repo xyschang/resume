@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Arial, 'Noto Sans TC', sans-serif;
     background-color: #f4f4f4;
-    line-height: 1.75;
+    line-height: 1.85;
 }
 
 .container {
@@ -10,9 +10,8 @@ body {
     max-width: 1100px;
     margin: 30px auto;
     background: white;
-    box-shadow: 0 0 20px rgba(0,0,0,0.12);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
     overflow: hidden;
-    min-height: 100vh;
 }
 
 /* 左欄 */
@@ -21,7 +20,6 @@ body {
     background: #2c2c2c;
     color: white;
     padding: 40px 30px;
-    position: relative;
 }
 
 /* 大頭貼 */
@@ -31,8 +29,8 @@ body {
 }
 
 .profile-photo img {
-    width: 160px;
-    height: 160px;
+    width: 155px;
+    height: 155px;
     border-radius: 50%;
     object-fit: cover;
     border: 6px solid #ffffff;
@@ -45,39 +43,44 @@ body {
     padding: 40px 35px;
 }
 
-/* ==================== 手機版優化 ==================== */
+/* ==================== 手機版強力優化 ==================== */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
         margin: 0;
         box-shadow: none;
         width: 100%;
-        min-height: auto;
     }
     
     .left, .right {
         width: 100%;
-        padding: 30px 22px;
+        padding: 32px 26px;     /* 明顯加大左右空間 */
     }
     
     .profile-photo img {
-        width: 130px;
-        height: 130px;
+        width: 135px;
+        height: 135px;
     }
     
-    h1 { font-size: 2.0em; }
-    h2 { font-size: 1.4em; margin-bottom: 18px; }
+    h1 { font-size: 2.1em; }
+    h2 { font-size: 1.38em; margin-bottom: 20px; }
+    h3 { font-size: 1.1em; }
     
     p, li {
-        font-size: 1.01em;
-        margin-bottom: 13px;
+        font-size: 1.02em;      /* 加大字體 */
+        margin-bottom: 14px;    /* 加大行距 */
     }
     
-    ul { padding-left: 24px; }
+    ul {
+        padding-left: 26px;
+    }
+    
+    .section {
+        margin-bottom: 38px;
+    }
 }
 
 /* 通用樣式 */
-h1 { margin: 0 0 10px 0; }
 h2 {
     border-bottom: 3px solid #1e3a8a;
     padding-bottom: 10px;
@@ -88,6 +91,3 @@ h2 {
     color: white;
     border-bottom: 2px solid #555;
 }
-
-ul { padding-left: 22px; margin: 12px 0; }
-li { margin-bottom: 10px; }
