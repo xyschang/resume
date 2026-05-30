@@ -1,31 +1,73 @@
 body {
     margin: 0;
     font-family: Arial, 'Noto Sans TC', sans-serif;
-    background-color: #f4f4f4;
-    line-height: 1.75;
+    background-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    line-height: 1.8;
 }
 
 .container {
     display: flex;
-    max-width: 1000px;
-    margin: 20px auto;
+    max-width: 1150px;
+    margin: 40px auto;
     background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 15px rgba(0,0,0,0.15);
     overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);              
 }
 
 /* 左欄 */
 .left {
-    width: 35%;
-    background: #2c2c2c;
+    width: 37%;
+    background: linear-gradient(180deg, #1e3a8a, #2c5282);
     color: white;
-    padding: 30px 25px;
+    padding: 50px 35px;
 }
 
 /* 右欄 */
 .right {
-    width: 65%;
-    padding: 30px 25px;
+    width: 63%;
+    padding: 50px 45px;
+}
+.section {
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    transform: translateX(10px);               /* 新增：滑鼠移上去往右移動 */
+}
+
+/* 【新增】證照兩欄顯示 */
+.cert-list {
+    column-count: 2;
+    column-gap: 40px;
+}
+
+.cert-list li {
+    margin-bottom: 12px;
+    break-inside: avoid;
+}
+/* 【新增】大頭貼特效 */
+.profile-photo {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-photo img {
+    width: 165px;
+    height: 165px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid rgba(255,255,255,0.95);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: all 0.4s ease;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.08);                    /* 新增：滑鼠移上去放大 */
 }
 
 /* ==================== 手機版大幅優化 ==================== */
@@ -40,6 +82,10 @@ body {
     .left, .right {
         width: 100%;
         padding: 28px 22px;        /* 增加內距 */
+    }
+
+    .cert-list {
+        column-count: 1;                       /* 手機版改回單欄 */
     }
     
     h1 { font-size: 2.0em; }
