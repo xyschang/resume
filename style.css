@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, 'Noto Sans TC', sans-serif;
-    background-color: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-color: linear-gradient(135deg, #2c3e50 0%, #1a2533 100%);
     line-height: 1.8;
 }
 
@@ -10,7 +10,8 @@ body {
     max-width: 1150px;
     margin: 40px auto;
     background: white;
-    box-shadow: 0 20px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    border-radius: 16px;
     overflow: hidden;
     transition: transform 0.4s ease;
 }
@@ -22,7 +23,7 @@ body {
 /* 左欄 */
 .left {
     width: 37%;
-    background: linear-gradient(180deg, #1e3a8a, #2c5282);
+    background: linear-gradient(180deg, #353a46, #2c5282);
     color: white;
     padding: 50px 35px;
 }
@@ -57,17 +58,17 @@ body {
 }
 
 .profile-photo img {
-    width: 165px;
-    height: 165px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
     object-fit: cover;
-    border: 6px solid rgba(255,255,255,0.95);
+    border: 6px solid #ffffff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     transition: all 0.4s ease;
 }
 
 .profile-photo img:hover {
-    transform: scale(1.08);                    /* 新增：滑鼠移上去放大 */
+    transform: scale(1.05);                    /* 新增：滑鼠移上去放大 */
 }
 
 /* ==================== 手機版大幅優化 ==================== */
