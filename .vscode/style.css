@@ -1,0 +1,147 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a,
+p,
+li {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+body {
+    margin: 0;
+    font-family: Arial, 'Noto Sans TC', sans-serif;
+    background-color: linear-gradient(135deg, #2c3e50 0%, #1a2533 100%);
+    line-height: 1.8;
+}
+
+.container {
+    display: flex;
+    max-width: 1150px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);              
+}
+
+/* 左欄 */
+.left {
+    width: 37%;
+    background: linear-gradient(180deg, #353a46, #2c5282);
+    color: white;
+    padding: 50px 35px;
+}
+
+/* 右欄 */
+.right {
+    width: 63%;
+    padding: 50px 45px;
+}
+.section {
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    transform: translateX(10px);               /* 新增：滑鼠移上去往右移動 */
+}
+
+/* 【新增】證照兩欄顯示 */
+.cert-list {
+    column-count: 2;
+    column-gap: 40px;
+}
+
+.cert-list li {
+    margin-bottom: 12px;
+    break-inside: avoid;
+}
+/* 【新增】大頭貼特效 */
+.profile-photo {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 6px solid #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: all 0.4s ease;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.05);                    /* 新增：滑鼠移上去放大 */
+}
+
+/* ==================== 手機版強力優化（解決文字被切問題） ==================== */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        margin: 10px;
+        border-radius: 12px;
+        width: 100%;
+    }
+    
+    .left, .right {
+        width: 100%;
+        /* 加大左右內距，讓文字不會被切到 */
+        padding: 35px 28px !important;
+    }
+    
+    h1 { font-size: 2.0em; }
+    h2 { font-size: 1.38em; margin-bottom: 18px; }
+    
+    p, li {
+        font-size: 1.02em;           /* 稍微加大字體 */
+        margin-bottom: 13px;
+        word-break: break-all;       /* 讓長字串可以斷行 */
+        hyphens: auto;               /* 自動斷字 */
+    }
+    
+    ul { 
+        padding-left: 24px; 
+    }
+    
+    .section {
+        margin-bottom: 35px;
+    }
+}
+
+/* 通用樣式 */
+h2 {
+    border-bottom: 3px solid #1e3a8a;
+    padding-bottom: 8px;
+    color: #1e3a8a;
+}
+
+.left h2 {
+    color: white;
+    border-bottom: 2px solid #555;
+}
+/* 證照兩欄顯示 */
+.cert-list {
+    column-count: 2;
+    column-gap: 40px;
+    padding-left: 0;
+}
+
+.cert-list li {
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
+
+@media (max-width: 768px) {
+    .cert-list {
+        column-count: 1;   /* 手機版改回單欄 */
+    }
+}
