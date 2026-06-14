@@ -3,70 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>張元碩 - QR Code</title>
+    <title>張元碩 - 專案 QR Code</title>
     <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+
         body {
             font-family: Arial, 'Noto Sans TC', sans-serif;
-            background: linear-gradient(135deg, #1e3a8a, #2c5282);
+            background: linear-gradient(135deg, #0a0e1a 0%, #1e3a8a 60%, #0a0e1a 100%);
+            min-height: 100vh;
             color: white;
+            padding: 40px 20px 60px;
+        }
+
+        /* 標題 */
+        .page-title {
             text-align: center;
-            padding: 40px 20px;
+            margin-bottom: 48px;
         }
-        h1 {
-            margin-bottom: 30px;
+        .page-title h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #63b3ed, #a78bfa, #68d391);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
         }
-        .qr-container {
-            background: white;
-            padding: 30px;
+        .page-title p {
+            color: rgba(255,255,255,0.45);
+            font-size: 0.88rem;
+            letter-spacing: 1px;
+        }
+
+        /* 卡片群 */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 單張卡片 */
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 20px;
+            padding: 32px 28px 28px;
+            width: 280px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* 專案類型標籤 */
+        .card-badge {
             display: inline-block;
-            margin: 20px auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 3px 12px;
+            border-radius: 20px;
+            margin-bottom: 14px;
         }
-        img {
-            max-width: 280px;
-            border: 8px solid #1e3a8a;
-            border-radius: 12px;
+        .badge-resume  { background: rgba(99,179,237,0.18); color: #63b3ed; border: 1px solid rgba(99,179,237,0.3); }
+        .badge-project { background: rgba(167,139,250,0.18); color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); }
+        .badge-ai      { background: rgba(104,211,145,0.18); color: #68d391; border: 1px solid rgba(104,211,145,0.3); }
+
+        .card h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.4;
         }
-        p {
-            margin-top: 25px;
-            font-size: 1.1em;
+
+        /* QR Code 圖片框 */
+        .qr-frame {
+            background: white;
+            border-radius: 14px;
+            padding: 14px;
+            margin: 0 auto 20px;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        .qr-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        /* 說明文字 */
+        .card-desc {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+
+        /* 連結按鈕 */
+        .card-link {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #93c5fd;
+            text-decoration: none;
+            border: 1px solid rgba(99,179,237,0.3);
+            border-radius: 8px;
+            padding: 6px 16px;
+            transition: all 0.2s;
+            word-break: break-all;
+        }
+        .card-link:hover {
+            background: rgba(99,179,237,0.15);
+            color: #bfdbfe;
+        }
+
+        /* 返回按鈕 */
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 48px;
+        }
+        .back-btn a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+        .back-btn a:hover { color: rgba(255,255,255,0.8); }
+
+        @media (max-width: 640px) {
+            .card { width: 100%; max-width: 320px; }
+            .page-title h1 { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
-    <h1>張元碩 - 線上簡歷</h1>
-    
-    <div class="qr-container">
-        <!-- 請把你的 QR Code 圖片改名成 qr-code.png 並放在同一個資料夾 -->
-        <img src="qr-code.jpeg" alt="掃描 QR Code 查看我的簡歷">
+
+<div class="page-title">
+    <h1>張元碩 · 專案導覽</h1>
+    <p>掃描 QR Code 或點擊連結直接前往</p>
+</div>
+
+<div class="cards">
+
+    <!-- 線上簡歷 -->
+    <div class="card">
+        <div class="card-badge badge-resume">📄 線上簡歷</div>
+        <h2>張元碩<br>軟體工程師簡歷</h2>
+        <div class="qr-frame">
+            <img src="qr-code.jpeg" alt="簡歷 QR Code">
+        </div>
+        <p class="card-desc">完整履歷、技能與專案介紹</p>
+        <a class="card-link" href="https://xyschang.github.io/resume" target="_blank">
+            xyschang.github.io/resume
+        </a>
     </div>
-    
-    <p>掃描上方 QR Code 即可快速查看我的完整線上簡歷<br>
-       或直接點擊連結：<br>
-       <a href="https://xyschang.github.io/resume" style="color:#ffd700;">https://xyschang.github.io/resume</a>
-    </p>
-    <h1>Smart price tracker</h1>
-    
-    <div class="qr-container">
-        <!-- 請把你的 QR Code 圖片改名成 qr-code.png 並放在同一個資料夾 -->
-        <img src="smart-price-tracker-qr-code.PNG" alt="掃描 QR Code 查看我的簡歷">
+
+    <!-- Smart Price Tracker -->
+    <div class="card">
+        <div class="card-badge badge-project">📊 專案</div>
+        <h2>Smart Price Tracker<br>商品與股票追蹤系統</h2>
+        <div class="qr-frame">
+            <img src="smart-price-tracker-qr-code.png" alt="Smart Price Tracker QR Code">
+        </div>
+        <p class="card-desc">Flask · SQLite · Chart.js · Claude AI</p>
+        <a class="card-link" href="https://smart-price-tracker-cbke.onrender.com/" target="_blank">
+            Live Demo
+        </a>
     </div>
-    
-    <p>掃描上方 QR Code 即可快速查看我的完整線上專案<br>
-       或直接點擊連結：<br>
-       <a href="https://smart-price-tracker-cbke.onrender.com/" style="color:#ffd700;">https://github.com/xyschang/smart-price-tracker</a>
-    </p>
-    <h1>Ai creation architect</h1>
-    
-    <div class="qr-container">
-        <!-- 請把你的 QR Code 圖片改名成 qr-code.png 並放在同一個資料夾 -->
-        <img src="ai-creation-architect-qr-code.PNG" alt="掃描 QR Code 查看我的簡歷">
+
+    <!-- AI Creation Architect -->
+    <div class="card">
+        <div class="card-badge badge-ai">🤖 AI 專案</div>
+        <h2>AI Creation Architect<br>創意生成架構工具</h2>
+        <div class="qr-frame">
+            <img src="ai-creation-architect-qr-code.png" alt="AI Creation Architect QR Code">
+        </div>
+        <p class="card-desc">Flask · Claude API · Vision AI</p>
+        <a class="card-link" href="https://ai-creation-architect.onrender.com/" target="_blank">
+            Live Demo
+        </a>
     </div>
-    
-    <p>掃描上方 QR Code 即可快速查看我的完整線上專案<br>
-       或直接點擊連結：<br>
-       <a href="https://ai-creation-architect.onrender.com/" style="color:#ffd700;">https://github.com/xyschang/AI-Creation-Architect</a>
-    </p>
+
+</div>
+
+<div class="back-btn">
+    <a href="index.html">← 返回簡歷</a>
+</div>
+
 </body>
 </html>
