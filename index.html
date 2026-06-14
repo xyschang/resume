@@ -102,65 +102,52 @@
             </ul>
         </div>
 
-        <!-- Projects 頁籤區塊 -->
         <div class="section">
             <h2>Projects</h2>
 
-            <!-- 頁籤按鈕 -->
-            <div class="proj-tabs">
-                <button class="proj-tab active" onclick="switchProject(0, this)">📊 Smart Price Tracker</button>
-                <button class="proj-tab" onclick="switchProject(1, this)">🤖 AI Creation Architect</button>
-                <button class="proj-tab" onclick="switchProject(2, this)">🏪 進銷存系統</button>
-            </div>
-
-            <!-- 專案內容 0：Smart Price Tracker -->
-            <div class="proj-content active" id="proj-0">
-                <div class="proj-meta">
-                    <span class="proj-tech">Python Flask · SQLite · Chart.js · Claude AI · yfinance</span><br>
+            <div class="proj-block">
+                <p class="proj-title"><strong>Smart Price Tracker（商品價格監控系統）</strong></p>
+                <p class="proj-stack">Python Flask · SQLite · Chart.js · Claude AI · yfinance</p>
+                <p class="proj-links">
                     <a href="https://github.com/xyschang/smart-price-tracker" target="_blank">GitHub</a>
                     &nbsp;·&nbsp;
                     <a href="https://smart-price-tracker-cbke.onrender.com" target="_blank">Live Demo</a>
-                </div>
+                </p>
                 <ul>
                     <li>使用 Python Flask 開發商品價格監控平台，支援商品新增、刪除、搜尋與排序</li>
                     <li>整合 Web Scraping，支援 BooksToScrape 與 PChome 商品價格自動擷取</li>
                     <li>新增股票模式：透過 yfinance 即時抓取股價，支援多股整合比較圖（標準化 %）</li>
                     <li>整合 Claude API，根據 MA5/MA20/MA60、近期高低點等數據自動生成 AI 分析建議</li>
-                    <li>使用 Chart.js 建立價格走勢圖，支援 1 個月 / 3 個月 / 6 個月 / 1 年區間切換</li>
-                    <li>實作 Gmail Email 自動通知與防重複寄送機制</li>
-                    <li>使用 localStorage 記憶使用者上次選取的股票與頁籤狀態</li>
+                    <li>使用 Chart.js 建立價格走勢圖，支援 1 個月至 1 年區間切換</li>
+                    <li>實作 Gmail Email 自動通知與防重複寄送機制，使用 localStorage 記憶 UI 狀態</li>
                     <li>使用 Git、GitHub 與 Render 完成版本控制與雲端部署</li>
                 </ul>
             </div>
 
-            <!-- 專案內容 1：AI Creation Architect -->
-            <div class="proj-content" id="proj-1">
-                <div class="proj-meta">
-                    <span class="proj-tech">Python Flask · Claude API · Vision AI · HTML/CSS/JS · JSON</span><br>
+            <div class="proj-block">
+                <p class="proj-title"><strong>AI Creation Architect（AI 創意生成架構工具）</strong></p>
+                <p class="proj-stack">Python Flask · Claude API · Vision AI · HTML/CSS/JS · JSON</p>
+                <p class="proj-links">
                     <a href="https://github.com/xyschang/AI-Creation-Architect" target="_blank">GitHub</a>
                     &nbsp;·&nbsp;
                     <a href="https://ai-creation-architect.onrender.com/" target="_blank">Live Demo</a>
-                </div>
+                </p>
                 <ul>
                     <li>開發 AI 創意生成架構平台，將模糊的使用者想法自動結構化為清晰的生成藍圖與提示詞</li>
                     <li>實作三大核心模組：AI 顧問諮詢模式、自動化工作流規劃、圖像提示詞生成</li>
                     <li>整合 Claude API 進行自然語言分析，根據使用者輸入生成完整的創作架構</li>
                     <li>支援圖片上傳與 Vision AI 圖像內容解析，自動提取視覺關鍵詞</li>
-                    <li>以 JSON 作為資料儲存格式，HTML/CSS/JS 建構前端互動介面</li>
-                    <li>完整實作從需求輸入、AI 分析、工作流輸出到圖像提示詞生成的全流程</li>
+                    <li>完整實作從需求輸入、AI 分析到圖像提示詞生成的全流程</li>
                 </ul>
             </div>
 
-            <!-- 專案內容 2：進銷存系統 -->
-            <div class="proj-content" id="proj-2">
-                <div class="proj-meta">
-                    <span class="proj-tech">C# · Visual Studio · SQL Server</span>
-                </div>
+            <div class="proj-block">
+                <p class="proj-title"><strong>結合銷售員銷售紅利計算之企業進銷存系統</strong></p>
+                <p class="proj-stack">C# · Visual Studio · SQL Server</p>
                 <ul>
                     <li>完整進銷存管理：進貨、銷貨、庫存即時查詢</li>
                     <li>銷售員業績自動統計與紅利計算機制，解決傳統人工計算不透明問題</li>
                     <li>友善的 GUI 操作介面與資料視覺化呈現</li>
-                    <li>有效解決傳統人工管理易出錯、效率低等問題</li>
                 </ul>
             </div>
 
@@ -168,15 +155,6 @@
 
     </div>
 </div>
-
-<script>
-function switchProject(index, btn) {
-    document.querySelectorAll('.proj-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.proj-content').forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('proj-' + index).classList.add('active');
-}
-</script>
 
 </body>
 </html>
